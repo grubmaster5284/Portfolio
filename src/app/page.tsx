@@ -58,7 +58,7 @@ const HeroSection = () => {
       setCurrentTagline((prev) => (prev + 1) % taglines.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [taglines.length]);
 
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-indigo-50 relative overflow-hidden">
@@ -120,7 +120,7 @@ const AboutSection = () => {
             notification systems.
           </p>
           <p className="text-lg text-gray-600 leading-relaxed mb-8">
-            As a final year student (B.Tech, Computer Science Engineering) at SASTRA University, I'm passionate 
+            As a final year student (B.Tech, Computer Science Engineering) at SASTRA University, I&apos;m passionate 
             about cybersecurity, software development, and gaming. My journey includes hackathons, IoT projects, 
             and a continuous drive to learn and innovate in tech.
           </p>
@@ -334,9 +334,9 @@ const ContactSection = () => {
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-6">Let's Connect</h3>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6">Let&apos;s Connect</h3>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                I'm always interested in discussing new opportunities, healthcare technology projects, 
+                I&apos;m always interested in discussing new opportunities, healthcare technology projects, 
                 or just having a conversation about software development and AI. Feel free to reach out!
               </p>
               <div className="space-y-4">
