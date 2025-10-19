@@ -255,4 +255,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Built with ❤️ using Next.js, TypeScript, and Tailwind CSS**
 
-*Last updated: December 2024*
+*Last updated: October 2025*
