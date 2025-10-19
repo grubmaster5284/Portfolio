@@ -18,6 +18,12 @@ export const projectsData = {
       description: "An alternative method to upscale low-resolution videos captured by low economic cameras in places like grocery shops to improve security and reduce cost.",
       technologies: ["Python", "AI", "Machine Learning", "JavaScript", "Super-Resolution"],
       status: "Completed" as const
+    },
+    {
+      title: "Rural Healthcare Assistant App",
+      description: "Developing a healthcare application providing medical advice and assistance to rural India communities with limited clinic access. Enables self-care for common illnesses like cold, fever, and minor ailments with pharmacy recommendations.",
+      technologies: ["Flutter", "Healthcare AI", "Medical Diagnostics", "Rural Health"],
+      status: "In Progress" as const
     }
   ]
 };
