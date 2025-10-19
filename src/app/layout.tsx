@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { generateMetadata } from "./utils/metadataUtils";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,17 +13,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Satvik Gedam - Python Developer Intern @ Cetas Healthcare",
-  description: "Python Developer Intern at Cetas Healthcare specializing in healthcare technology, API development, and AI solutions. Final year B.Tech Computer Science Engineering student at SASTRA University.",
-  keywords: "Python Developer, Healthcare Technology, API Development, AI, Software Development, Cetas Healthcare, SASTRA University",
-  authors: [{ name: "Satvik Gedam" }],
-  openGraph: {
-    title: "Satvik Gedam - Python Developer Intern",
-    description: "Python Developer Intern at Cetas Healthcare specializing in healthcare technology and AI solutions",
-    type: "website",
-    locale: "en_US",
-  },
+export const metadata: Metadata = generateMetadata();
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({

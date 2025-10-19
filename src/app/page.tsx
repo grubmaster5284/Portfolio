@@ -1,6 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { portfolioData } from './data';
+import { getCopyrightText } from './utils/dateUtils';
+import { getProjectStatusColor } from './utils/projectUtils';
+import type { NavigationLink, Role, Company, Project, Education, Certification, Award } from './data/types';
 
 // Navigation Component
 const Navigation = () => {
@@ -10,13 +14,17 @@ const Navigation = () => {
     <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-200">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="text-xl font-bold text-gray-900">Satvik Gedam</div>
+          <div className="text-xl font-bold text-gray-900">{portfolioData.navigation.brand}</div>
           <div className="hidden md:flex space-x-8">
-            <a href="#about" className="text-gray-600 hover:text-blue-600 transition-colors">About</a>
-            <a href="#skills" className="text-gray-600 hover:text-blue-600 transition-colors">Skills</a>
-            <a href="#experience" className="text-gray-600 hover:text-blue-600 transition-colors">Experience</a>
-            <a href="#projects" className="text-gray-600 hover:text-blue-600 transition-colors">Projects</a>
-            <a href="#contact" className="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+            {portfolioData.navigation.links.map((link: NavigationLink, index: number) => (
+              <a 
+                key={index}
+                href={link.href} 
+                className="text-gray-600 hover:text-blue-600 transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
           <button 
             className="md:hidden"
@@ -30,11 +38,15 @@ const Navigation = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-200">
             <div className="flex flex-col space-y-4">
-              <a href="#about" className="text-gray-600 hover:text-blue-600 transition-colors">About</a>
-              <a href="#skills" className="text-gray-600 hover:text-blue-600 transition-colors">Skills</a>
-              <a href="#experience" className="text-gray-600 hover:text-blue-600 transition-colors">Experience</a>
-              <a href="#projects" className="text-gray-600 hover:text-blue-600 transition-colors">Projects</a>
-              <a href="#contact" className="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+              {portfolioData.navigation.links.map((link: NavigationLink, index: number) => (
+                <a 
+                  key={index}
+                  href={link.href} 
+                  className="text-gray-600 hover:text-blue-600 transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
             </div>
           </div>
         )}
@@ -46,19 +58,13 @@ const Navigation = () => {
 // Hero Section Component
 const HeroSection = () => {
   const [currentTagline, setCurrentTagline] = useState(0);
-  const taglines = [
-    "Python Developer Intern @ Cetas Healthcare",
-    "Healthcare Technology Developer", 
-    "Python & API Specialist",
-    "AI Generalist"
-  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTagline((prev) => (prev + 1) % taglines.length);
+      setCurrentTagline((prev) => (prev + 1) % portfolioData.hero.taglines.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, [taglines.length]);
+  }, []); // Empty dependency array since portfolioData is static
 
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-indigo-50 relative overflow-hidden">
@@ -71,31 +77,30 @@ const HeroSection = () => {
       
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
         <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 animate-fade-in">
-          Satvik Gedam
+          {portfolioData.hero.name}
         </h1>
         <div className="h-16 flex items-center justify-center mb-8">
           <p className="text-xl md:text-2xl text-gray-600 transition-all duration-500 ease-in-out">
-            {taglines[currentTagline]}
+            {portfolioData.hero.taglines[currentTagline]}
           </p>
         </div>
         <p className="text-lg text-gray-500 mb-12 max-w-2xl mx-auto">
-          Final year B.Tech Computer Science Engineering student at SASTRA University, 
-          passionate about cybersecurity, software development, and gaming.
+          {portfolioData.hero.description}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a 
-            href="#contact" 
+            href={portfolioData.hero.ctaButtons.primary.href} 
             className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
           >
-            Get In Touch
+            {portfolioData.hero.ctaButtons.primary.text}
           </a>
           <a 
-            href="https://www.linkedin.com/in/satvik-gedam-2a2866295/" 
-            target="_blank"
-            rel="noopener noreferrer"
+            href={portfolioData.hero.ctaButtons.secondary.href} 
+            target={portfolioData.hero.ctaButtons.secondary.external ? "_blank" : "_self"}
+            rel={portfolioData.hero.ctaButtons.secondary.external ? "noopener noreferrer" : undefined}
             className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-105"
           >
-            LinkedIn
+            {portfolioData.hero.ctaButtons.secondary.text}
           </a>
         </div>
       </div>
@@ -109,36 +114,22 @@ const AboutSection = () => {
     <section id="about" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">{portfolioData.about.title}</h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
         </div>
         <div className="max-w-4xl mx-auto">
-          <p className="text-lg text-gray-600 leading-relaxed mb-8">
-            I am a Python Developer Intern at Cetas Healthcare, where I create and maintain web applications 
-            and APIs for the healthcare sector. My work involves collaborating with experienced developers, 
-            utilizing cloud-based tools like Colab, and developing solutions like patient portals and 
-            notification systems.
-          </p>
-          <p className="text-lg text-gray-600 leading-relaxed mb-8">
-            As a final year student (B.Tech, Computer Science Engineering) at SASTRA University, I&apos;m passionate 
-            about cybersecurity, software development, and gaming. My journey includes hackathons, IoT projects, 
-            and a continuous drive to learn and innovate in tech.
-          </p>
+          {portfolioData.about.content.map((paragraph: string, index: number) => (
+            <p key={index} className="text-lg text-gray-600 leading-relaxed mb-8">
+              {paragraph}
+            </p>
+          ))}
           <div className="grid md:grid-cols-2 gap-8 mt-12">
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Current Role</h3>
-              <p className="text-gray-600">
-                Python Developer Intern at Cetas Healthcare, developing healthcare technology solutions 
-                and collaborating with experienced development teams.
-              </p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Education</h3>
-              <p className="text-gray-600">
-                Final year B.Tech Computer Science Engineering student at SASTRA University, 
-                with a focus on practical application of technology in healthcare.
-              </p>
-            </div>
+            {portfolioData.about.highlights.map((highlight: { title: string; description: string }, index: number) => (
+              <div key={index} className="bg-gray-50 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">{highlight.title}</h3>
+                <p className="text-gray-600">{highlight.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -148,41 +139,22 @@ const AboutSection = () => {
 
 // Skills Section Component
 const SkillsSection = () => {
-  const skillCategories = [
-    {
-      title: "Programming Languages",
-      skills: ["Python", "HTML5", "Java"]
-    },
-    {
-      title: "Cloud Platforms", 
-      skills: ["Google Cloud Platform (GCP)", "Amazon Web Services (AWS)"]
-    },
-    {
-      title: "Development Tools",
-      skills: ["ChatGPT & Generative AI", "Jira", "Industrial Internet of Things (IIoT)"]
-    },
-    {
-      title: "Specializations",
-      skills: ["API Development", "Software Development", "AI Generalist"]
-    }
-  ];
-
   return (
     <section id="skills" className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Skills & Expertise</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">{portfolioData.skills.title}</h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {skillCategories.map((category, index) => (
+          {portfolioData.skills.categories.map((category: { title: string; skills: string[] }, index: number) => (
             <div 
               key={index}
               className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
             >
               <h3 className="text-xl font-semibold text-gray-900 mb-4">{category.title}</h3>
               <div className="space-y-3">
-                {category.skills.map((skill, skillIndex) => (
+                {category.skills.map((skill: string, skillIndex: number) => (
                   <div 
                     key={skillIndex}
                     className="bg-blue-50 text-blue-800 px-3 py-2 rounded-full text-sm font-medium hover:bg-blue-100 transition-colors cursor-pointer"
@@ -201,53 +173,114 @@ const SkillsSection = () => {
 
 // Experience Section Component
 const ExperienceSection = () => {
-  const experiences = [
-    {
-      title: "Python Developer Intern",
-      company: "Cetas Healthcare",
-      period: "Present",
-      description: "Develop web applications and APIs for healthcare sector. Utilize Colab for collaborative development and testing. Projects include patient portal and notification API integration.",
-      highlights: ["Healthcare Technology", "API Development", "Collaborative Development"]
-    },
-    {
-      title: "Python Developer Contractor", 
-      company: "Cetas Healthcare",
-      period: "Jun 2024 – Present",
-      description: "Integrating AI in market research applications, focusing on innovative solutions for healthcare technology.",
-      highlights: ["AI Integration", "Market Research", "Healthcare Solutions"]
-    }
-  ];
+  const [expandedRoles, setExpandedRoles] = useState<Set<string>>(new Set());
+
+  const toggleRoleExpansion = (roleKey: string) => {
+    setExpandedRoles(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(roleKey)) {
+        newSet.delete(roleKey);
+      } else {
+        newSet.add(roleKey);
+      }
+      return newSet;
+    });
+  };
 
   return (
     <section id="experience" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Professional Experience</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">{portfolioData.experience.title}</h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
         </div>
         <div className="max-w-4xl mx-auto">
-          {experiences.map((exp, index) => (
-            <div 
-              key={index}
-              className="mb-12 p-6 bg-gray-50 rounded-lg hover:shadow-lg transition-all duration-300"
-            >
-              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                <div>
-                  <h3 className="text-2xl font-semibold text-gray-900">{exp.title}</h3>
-                  <p className="text-xl text-blue-600 font-medium">{exp.company}</p>
+          {portfolioData.experience.companies.map((company: Company, companyIndex: number) => (
+            <div key={companyIndex} className="mb-16">
+              {/* Company Header */}
+              <div className="flex items-center mb-6 p-4 bg-white rounded-lg shadow-sm border-l-4 border-blue-500">
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-gray-900">{company.name}</h3>
+                  <div className="flex items-center gap-4 mt-2 text-sm text-gray-600">
+                    <span>{company.duration}</span>
+                    <span>•</span>
+                    <span>{company.location}</span>
+                  </div>
                 </div>
-                <span className="text-gray-500 font-medium mt-2 md:mt-0">{exp.period}</span>
               </div>
-              <p className="text-gray-600 mb-4 leading-relaxed">{exp.description}</p>
-              <div className="flex flex-wrap gap-2">
-                {exp.highlights.map((highlight, highlightIndex) => (
-                  <span 
-                    key={highlightIndex}
-                    className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >
-                    {highlight}
-                  </span>
-                ))}
+              
+              {/* Roles for this company */}
+              <div className="space-y-6">
+                {company.roles.map((role: Role, roleIndex: number) => {
+                  const roleKey = `${companyIndex}-${roleIndex}`;
+                  const isExpanded = expandedRoles.has(roleKey);
+                  
+                  return (
+                    <div 
+                      key={roleIndex}
+                      className="p-6 bg-gray-50 rounded-lg hover:shadow-lg transition-all duration-300"
+                    >
+                      <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                        <div className="flex-1">
+                          <h4 className="text-xl font-semibold text-gray-900">{role.title}</h4>
+                          <div className="flex items-center gap-2 mt-1">
+                            <span className="text-blue-600 font-medium">{role.employmentType}</span>
+                            <span className="text-gray-400">•</span>
+                            <span className="text-gray-500">{role.period}</span>
+                          </div>
+                          <p className="text-gray-600 text-sm mt-1">{role.location}</p>
+                        </div>
+                        <button
+                          onClick={() => toggleRoleExpansion(roleKey)}
+                          className="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors mt-2 md:mt-0"
+                        >
+                          <span className="text-sm font-medium">
+                            {isExpanded ? 'Show Less' : 'Show More'}
+                          </span>
+                          <svg 
+                            className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
+                            fill="none" 
+                            stroke="currentColor" 
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+                      </div>
+                      
+                      {/* Summary (always visible) */}
+                      <div className="mb-4">
+                        <p className="text-gray-600 leading-relaxed">{role.summary}</p>
+                      </div>
+                      
+                      {/* Expanded Description */}
+                      {isExpanded && (
+                        <div className="mb-4">
+                          <ul className="space-y-2">
+                            {role.description.map((desc: string, descIndex: number) => (
+                              <li key={descIndex} className="text-gray-600 leading-relaxed flex items-start">
+                                <span className="text-blue-500 mr-2 mt-1">•</span>
+                                <span>{desc}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                      
+                      {/* Skills */}
+                      <div className="flex flex-wrap gap-2">
+                        {role.skills.map((skill: string, skillIndex: number) => (
+                          <span 
+                            key={skillIndex}
+                            className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           ))}
@@ -259,53 +292,28 @@ const ExperienceSection = () => {
 
 // Projects Section Component
 const ProjectsSection = () => {
-  const projects = [
-    {
-      title: "Machine Learning Techniques for Chronic Kidney Disease Prediction",
-      description: "Developed a feature-selection model for improved prediction accuracy in chronic kidney disease diagnosis using advanced machine learning techniques.",
-      technologies: ["Python", "Machine Learning", "Data Science", "Healthcare AI"],
-      status: "Completed"
-    },
-    {
-      title: "Enhanced Security using MQTT and TCP (IoT + Java)",
-      description: "Built an IoT product for real-time environmental alerts via SMS, implementing secure communication protocols and real-time monitoring capabilities.",
-      technologies: ["Java", "IoT", "MQTT", "TCP", "SMS Integration"],
-      status: "Completed"
-    },
-    {
-      title: "Patient Portal Development",
-      description: "Developing a comprehensive patient portal for healthcare management, featuring secure authentication, appointment scheduling, and medical record access.",
-      technologies: ["Python", "Web Development", "Healthcare API", "Security"],
-      status: "In Progress"
-    }
-  ];
-
   return (
     <section id="projects" className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">{portfolioData.projects.title}</h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {portfolioData.projects.projects.map((project: Project, index: number) => (
             <div 
               key={index}
               className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
             >
               <div className="flex justify-between items-start mb-4">
                 <h3 className="text-xl font-semibold text-gray-900">{project.title}</h3>
-                <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                  project.status === 'Completed' 
-                    ? 'bg-green-100 text-green-800' 
-                    : 'bg-yellow-100 text-yellow-800'
-                }`}>
+                <span className={`px-3 py-1 rounded-full text-sm font-medium ${getProjectStatusColor(project.status)}`}>
                   {project.status}
                 </span>
               </div>
               <p className="text-gray-600 mb-4 leading-relaxed">{project.description}</p>
               <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech, techIndex) => (
+                {project.technologies.map((tech: string, techIndex: number) => (
                   <span 
                     key={techIndex}
                     className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
@@ -322,13 +330,122 @@ const ProjectsSection = () => {
   );
 };
 
+// Education Section Component
+const EducationSection = () => {
+  return (
+    <section id="education" className="py-20 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">{portfolioData.education.title}</h2>
+          <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
+        </div>
+        <div className="max-w-4xl mx-auto">
+          {portfolioData.education.education.map((edu: Education, index: number) => (
+            <div 
+              key={index}
+              className="mb-12 p-6 bg-gray-50 rounded-lg hover:shadow-lg transition-all duration-300"
+            >
+              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                <div>
+                  <h3 className="text-2xl font-semibold text-gray-900">{edu.degree}</h3>
+                  <p className="text-xl text-blue-600 font-medium">{edu.institution}</p>
+                  <p className="text-gray-600">{edu.location}</p>
+                </div>
+                <div className="text-right mt-2 md:mt-0">
+                  <span className="text-gray-500 font-medium block">{edu.period}</span>
+                  <span className="text-blue-600 font-semibold">{edu.grade}</span>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {edu.skills.map((skill: string, skillIndex: number) => (
+                  <span 
+                    key={skillIndex}
+                    className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Certifications Section Component
+const CertificationsSection = () => {
+  return (
+    <section id="certifications" className="py-20 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">{portfolioData.certifications.title}</h2>
+          <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
+        </div>
+        <div className="grid md:grid-cols-2 gap-8">
+          {portfolioData.certifications.certifications.map((cert: Certification, index: number) => (
+            <div 
+              key={index}
+              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+            >
+              <div className="flex justify-between items-start mb-4">
+                <h3 className="text-xl font-semibold text-gray-900">{cert.title}</h3>
+                <span className="text-blue-600 font-medium">{cert.date}</span>
+              </div>
+              <p className="text-blue-600 font-medium mb-3">{cert.issuer}</p>
+              <p className="text-gray-600 leading-relaxed">{cert.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Awards Section Component
+const AwardsSection = () => {
+  return (
+    <section id="awards" className="py-20 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">{portfolioData.awards.title}</h2>
+          <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
+        </div>
+        <div className="max-w-4xl mx-auto">
+          {portfolioData.awards.awards.map((award: Award, index: number) => (
+            <div 
+              key={index}
+              className="p-6 bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg border-l-4 border-purple-500 hover:shadow-lg transition-all duration-300"
+            >
+              <div className="flex justify-between items-start mb-4">
+                <div>
+                  <h3 className="text-2xl font-semibold text-gray-900">{award.title}</h3>
+                  <p className="text-xl text-blue-600 font-medium">{award.organization}</p>
+                </div>
+                <div className="text-right">
+                  <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">
+                    {award.achievement}
+                  </span>
+                  <p className="text-gray-500 font-medium mt-2">{award.date}</p>
+                </div>
+              </div>
+              <p className="text-gray-600 leading-relaxed">{award.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 // Contact Section Component
 const ContactSection = () => {
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">{portfolioData.contact.title}</h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
         </div>
         <div className="max-w-4xl mx-auto">
@@ -336,16 +453,15 @@ const ContactSection = () => {
             <div>
               <h3 className="text-2xl font-semibold text-gray-900 mb-6">Let&apos;s Connect</h3>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                I&apos;m always interested in discussing new opportunities, healthcare technology projects, 
-                or just having a conversation about software development and AI. Feel free to reach out!
+                {portfolioData.contact.description}
               </p>
               <div className="space-y-4">
                 <div className="flex items-center">
                   <svg className="w-6 h-6 text-blue-600 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  <a href="mailto:satvikricky777@gmail.com" className="text-gray-600 hover:text-blue-600 transition-colors">
-                    satvikricky777@gmail.com
+                  <a href={`mailto:${portfolioData.contact.contactInfo.email}`} className="text-gray-600 hover:text-blue-600 transition-colors">
+                    {portfolioData.contact.contactInfo.email}
                   </a>
                 </div>
                 <div className="flex items-center">
@@ -353,7 +469,7 @@ const ContactSection = () => {
                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                   </svg>
                   <a 
-                    href="https://www.linkedin.com/in/satvik-gedam-2a2866295/" 
+                    href={portfolioData.contact.contactInfo.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 hover:text-blue-600 transition-colors"
@@ -366,7 +482,7 @@ const ContactSection = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
-                  <span className="text-gray-600">Pune, Maharashtra, India</span>
+                  <span className="text-gray-600">{portfolioData.contact.contactInfo.location}</span>
                 </div>
               </div>
             </div>
@@ -374,18 +490,18 @@ const ContactSection = () => {
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Quick Contact</h3>
               <div className="space-y-4">
                 <a 
-                  href="mailto:satvikricky777@gmail.com"
+                  href={portfolioData.contact.ctaButtons.email.href}
                   className="block w-full bg-blue-600 text-white text-center py-3 rounded-lg hover:bg-blue-700 transition-colors"
                 >
-                  Send Email
+                  {portfolioData.contact.ctaButtons.email.text}
                 </a>
                 <a 
-                  href="https://www.linkedin.com/in/satvik-gedam-2a2866295/" 
+                  href={portfolioData.contact.ctaButtons.linkedin.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full border-2 border-blue-600 text-blue-600 text-center py-3 rounded-lg hover:bg-blue-600 hover:text-white transition-colors"
                 >
-                  Connect on LinkedIn
+                  {portfolioData.contact.ctaButtons.linkedin.text}
                 </a>
               </div>
             </div>
@@ -403,7 +519,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <p className="text-gray-400">
-            © 2024 Satvik Gedam. All rights reserved. Built with Next.js and Tailwind CSS.
+            {getCopyrightText(portfolioData.contact.footer.name, portfolioData.contact.footer.additionalText)}
           </p>
         </div>
       </div>
@@ -421,6 +537,9 @@ export default function Home() {
       <SkillsSection />
       <ExperienceSection />
       <ProjectsSection />
+      <EducationSection />
+      <CertificationsSection />
+      <AwardsSection />
       <ContactSection />
       <Footer />
     </div>
