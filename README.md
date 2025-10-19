@@ -1,6 +1,8 @@
-# Satvik Gedam - Professional Portfolio
+# Professional Portfolio Template
 
-A modern, responsive portfolio website showcasing professional journey as an AI Software Developer at Cetas Healthcare. Built with Next.js 15, TypeScript, and Tailwind CSS with dynamic content management.
+A modern, responsive portfolio website built with Next.js 15, TypeScript, and Tailwind CSS featuring dynamic content management and automated deployment.
+
+🌐 **Live Demo**: [https://grubmaster5284.github.io/Portfolio/](https://grubmaster5284.github.io/Portfolio/)
 
 ## 🚀 Features
 
@@ -90,11 +92,11 @@ export const heroData = {
   name: "Your Name",
   taglines: [
     "Your Current Role @ Company",
-    "Your Specialization",
+    "Your Specialization", 
     "Your Expertise",
     "Your Unique Value"
   ],
-  description: "Your professional summary...",
+  description: "Your professional summary and background...",
   ctaButtons: {
     primary: { text: "Get In Touch", href: "#contact" },
     secondary: { text: "LinkedIn", href: "https://linkedin.com/in/your-profile", external: true }
@@ -109,8 +111,8 @@ export const projectsData = {
   projects: [
     {
       title: "Project Name",
-      description: "Project description...",
-      technologies: ["Tech 1", "Tech 2"],
+      description: "Project description and key features...",
+      technologies: ["Technology 1", "Technology 2", "Technology 3"],
       status: "Completed" // or "In Progress" or "Award Winner"
     }
   ]
@@ -123,18 +125,21 @@ export const experienceData = {
   title: "Professional Experience",
   companies: [
     {
-      name: "Company Name",
+      name: "Cetas Healthcare",
       duration: "2 yrs 1 mo",
       location: "Remote",
       roles: [
         {
-          title: "Job Title",
-          employmentType: "Full-time",
-          period: "May 2025 - Present · 6 mos",
-          location: "City, State",
-          summary: "Brief job summary...",
-          description: ["Detailed bullet point 1", "Detailed bullet point 2"],
-          skills: ["Skill 1", "Skill 2", "Skill 3"]
+          title: "AI Software Developer",
+          employmentType: "Freelance",
+          period: "May 2024 - Present",
+          location: "Mumbai, Maharashtra, India",
+          summary: "Integrating AI capabilities into existing applications and rapidly developing custom apps for clients, specializing in AI-augmented mobile development with advanced AI tools stack.",
+          description: [
+            "Specialize in rapid development and deployment using advanced AI tools stack including Cursor, Replit, Dialogflow CX, Lovable, and Emergent",
+            "Integrate generative AI and LLMs directly into existing mobile applications, modernizing apps with cutting-edge AI capabilities"
+          ],
+          skills: ["Dialogflow CX", "Rapid Mobile App Deployment", "Flutter", "AI Integration", "Client Consulting", "LLM", "OpenAI APIs"]
         }
       ]
     }
@@ -229,6 +234,7 @@ npm run export       # Export static site for GitHub Pages
 - **Email**: satvikricky777@gmail.com
 - **LinkedIn**: [linkedin.com/in/satvik-gedam-2a2866295](https://www.linkedin.com/in/satvik-gedam-2a2866295/)
 - **Location**: Pune, Maharashtra, India
+- **Website**: [https://grubmaster5284.github.io/Portfolio/](https://grubmaster5284.github.io/Portfolio/)
 
 ## 📚 Resources
 
@@ -255,5 +261,13 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Built with ❤️ using Next.js, TypeScript, and Tailwind CSS**
 
-*Last updated: October 2025*
-# Portfolio Update Mon Oct 20 02:23:02 IST 2025
+*Last updated: October 2024*
+
+---
+
+**Portfolio Features:**
+- ✅ Real project data from your GitHub profile
+- ✅ Actual contact information and links
+- ✅ Current role at Cetas Healthcare
+- ✅ Live website deployment
+- ✅ Dynamic content management system
