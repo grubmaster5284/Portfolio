@@ -158,6 +158,13 @@ export const portfolioData = {
         status: "Completed"
       },
       {
+        title: "Plot-AI — Intelligent Data Analytics Platform",
+        company: "Cetas Healthcare",
+        description: "AI-driven data analytics desktop application built on Excel and PowerPoint. Designed and implemented the voice recognition module from scratch (OpenAI Speech API + NAudio), built a voice assistant UI with Web Speech API, and added Power BI/Tableau import utilities. Also modernized the add-in for Office 2019+ by migrating to WebView2, refactoring VSTO ribbon handlers, and targeting .NET 4.6.2+. 2,500+ lines added across 39 files over 19 commits.",
+        technologies: ["VB.NET", "VSTO", "OpenAI API", "NAudio", "WebView2", "Web Speech API", "Excel", "PowerPoint", ".NET"],
+        status: "Completed"
+      },
+      {
         title: "Multilingual AI Assistant",
         company: "Cetas Healthcare",
         description: "Android and Excel Add-in applications using GenAI and LLMs, with a multilingual voice interface featuring custom models for underserved dialects — deployed across healthcare and banking client networks.",
