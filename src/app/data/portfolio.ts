@@ -4,31 +4,31 @@ export const portfolioData = {
     name: "Satvik Gedam",
     taglines: [
       "Flutter Developer & AI Integration Specialist @ BluOpal Advisors",
-      "AI Software Developer @ Cetas Healthcare",
-      "GenAI Integrator & Automation Expert",
-      "Rapid App Development Consultant"
+      "Mecasso Hackathon Winner | Published Researcher",
+      "GenAI Integrator & LLM Automation Expert",
+      "CLEAN Architecture | Scalable AI Solutions"
     ],
-    description: "Flutter Developer & AI Integration Specialist at BluOpal Advisors LLP and AI Software Developer at Cetas Healthcare. Certified GenAI Mastermind with deep expertise in AI-augmented Flutter development, LLM integration, and leveraging advanced AI tools for rapid, scalable app delivery.",
+    description: "AI-Driven Flutter Specialist and GenAI Integrator with expertise in rapid mobile app development and workflow automation using LLMs. Currently building an AI-powered EdTech platform at BluOpal Advisors LLP. Certified Generative AI Mastermind (Outskill), Mecasso Hackathon 2023 winner, and published researcher in video upscaling, IoT security, and ML for healthcare.",
     ctaButtons: {
       primary: { text: "Get In Touch", href: "#contact" },
       secondary: { text: "LinkedIn", href: "https://www.linkedin.com/in/satvik-gedam-2a2866295/", external: true }
     }
   },
-  
+
   about: {
     title: "About Me",
     content: [
-      "I'm a Flutter Developer & AI Integration Specialist at BluOpal Advisors LLP, and an AI Software Developer at Cetas Healthcare. My work spans AI-augmented mobile development, LLM integration, generative AI consulting, and rapid client-facing app delivery.",
-      "With a strong foundation in Flutter, Python, and modern AI tooling, I focus on embedding intelligent automation into mobile and web applications. I architect solutions using CLEAN Architecture and SOLID principles, emphasizing maintainable, scalable, AI-driven systems."
+      "I'm an AI-Driven Flutter Specialist and GenAI Integrator currently building an AI-powered EdTech platform at BluOpal Advisors LLP, integrating LLMs for real-time lesson generation and interactive learning content. Previously, I built scalable healthcare solutions at Cetas Healthcare — including a Practo-like platform democratizing medical access for rural India with multilingual AI voice interfaces.",
+      "I specialize in AI-augmented Flutter development and workflow automation using LLMs to accelerate delivery, always under CLEAN Architecture and SOLID principles. I'm a certified Generative AI Mastermind (Outskill), winner of the Mecasso Hackathon 2023 for assistive technology innovation, and a published researcher in video upscaling, IoT security, and ML for healthcare."
     ],
     highlights: [
       {
         title: "AI Integration Specialist",
-        description: "Expert in integrating generative AI and LLMs into existing mobile applications, modernising apps with cutting-edge AI capabilities using OpenAI, Claude, Gemini, and Dialogflow CX."
+        description: "Expert in integrating generative AI and LLMs into mobile and web apps using Cursor, Replit, Lovable, Emergent, and Dialogflow CX for rapid, intelligent delivery."
       },
       {
-        title: "Rapid Development",
-        description: "Specialize in rapid development and deployment using an advanced AI tools stack including Cursor, Replit, Lovable, and Emergent — delivering production-ready apps at consulting speed."
+        title: "Rapid App Development",
+        description: "Specialize in AI-augmented Flutter development across Web and Android, building production-ready apps at consulting speed with CLEAN Architecture and SOLID principles."
       }
     ]
   },
@@ -38,27 +38,27 @@ export const portfolioData = {
     categories: [
       {
         title: "AI & Generative AI",
-        skills: ["Generative AI", "Agentic AI", "LLM Integration", "OpenAI API", "Claude AI", "Google Gemini", "Dialogflow CX", "Llama", "ChatGPT", "Natural Language Processing", "Prompt Engineering"]
+        skills: ["Generative AI", "Agentic AI", "LLM Integration", "OpenAI API", "Claude AI", "Google Gemini", "Dialogflow CX", "Llama", "Natural Language Processing", "Prompt Engineering"]
       },
       {
-        title: "Mobile Development",
-        skills: ["Flutter", "Dart", "Kotlin", "AI-Augmented Flutter Development", "Rapid Mobile App Deployment", "Android Studio"]
+        title: "Mobile & App Development",
+        skills: ["Flutter", "Dart", "AI-Augmented Flutter Development", "Rapid Mobile App Deployment", "Android Studio", "Kotlin", "Firebase"]
       },
       {
         title: "ML & Data Science",
-        skills: ["TensorFlow", "PyTorch", "Machine Learning", "Computer Vision", "OpenCV", "Image Processing", "SHAP", "Data Analysis"]
+        skills: ["Machine Learning", "TensorFlow", "PyTorch", "Computer Vision", "OpenCV", "Image Processing", "Data Analysis"]
       },
       {
         title: "Web & Backend",
-        skills: ["Python", "Flask", "JavaScript", "TypeScript", "HTML5", "CSS", "Responsive Web Design", ".NET", "SQL", "MySQL", "APIs", "JSON"]
+        skills: ["Python", "Flask", "JavaScript", "TypeScript", "HTML5", "CSS", ".NET", "SQL", "MySQL", "APIs"]
       },
       {
         title: "Cloud & DevOps",
-        skills: ["AWS", "Azure", "Google Cloud Platform", "S3", "Docker", "Cloud Computing"]
+        skills: ["AWS", "Azure", "Google Cloud Platform", "Docker", "Git", "GitHub"]
       },
       {
-        title: "Development Tools",
-        skills: ["Git", "GitHub", "Cursor", "Lovable", "Emergent", "Replit", "Jira", "Jupyter", "Colab", "Selenium", "Workflow Automation", "Productivity & Workflow Automation"]
+        title: "Dev Tools & Automation",
+        skills: ["Cursor", "Lovable", "Emergent", "Replit", "Jira", "Jupyter", "Workflow Automation"]
       }
     ]
   },
@@ -68,91 +68,72 @@ export const portfolioData = {
     companies: [
       {
         name: "BluOpal Advisors LLP",
-        duration: "5 mos",
-        location: "Remote",
+        duration: "1 yr 4 mos",
+        location: "Pune, Maharashtra",
         roles: [
           {
             title: "Flutter Developer & AI Integration Specialist",
-            employmentType: "Full-time",
+            employmentType: "Freelance",
             period: "Jan 2025 - Present",
-            location: "Remote",
-            summary: "Leading Flutter development and AI integration for client projects at BluOpal Advisors, a technology advisory firm. Delivering AI-powered mobile solutions with a focus on speed, scalability, and intelligent automation.",
+            location: "Pune, Maharashtra",
+            summary: "Building an AI-powered EdTech platform delivering dynamic, interactive learning experiences using generative AI and Flutter across Web and Android.",
             description: [
-              "Develop and deliver AI-integrated Flutter applications for diverse client requirements",
-              "Integrate generative AI capabilities including LLMs, OpenAI APIs, and Claude into mobile apps",
-              "Design and implement agentic AI workflows and automation pipelines",
-              "Leverage advanced AI tools stack (Cursor, Lovable, Emergent) for rapid, high-quality delivery",
-              "Architect solutions using CLEAN Architecture and SOLID principles for maintainability"
+              "Integrated AI features to auto-generate lesson content and study material based on topics being studied, using LLMs and generative AI",
+              "Built interactive content components (graphs, diagrams, charts, and visual interactables) that update in real-time as students progress through topics",
+              "Designed and improved UI/UX across both Web and Android platforms using Flutter, ensuring a seamless, responsive experience on all form factors",
+              "Built and maintained databases for practice tests, quizzes, and assessment modules to support the platform's learning management system",
+              "Collaborated cross-functionally with multiple teams to streamline UI consistency and resolve design bottlenecks"
             ],
-            skills: ["Flutter", "Dart", "AI Integration", "LLM", "OpenAI APIs", "Agentic AI", "Workflow Automation", "Lovable", "Emergent"]
+            skills: ["Flutter", "Dart", "LLMs", "Generative AI", "Firebase", "SQL", "AI Integration", "UI/UX"]
           }
         ]
       },
       {
         name: "Cetas Healthcare",
-        duration: "1 yr 8 mos",
-        location: "Remote",
+        duration: "2 yrs 3 mos",
+        location: "Mumbai / Pune, Maharashtra",
         roles: [
           {
             title: "AI Software Developer",
-            employmentType: "Freelance",
-            period: "May 2025 - Present",
-            location: "Mumbai, Maharashtra, India",
-            summary: "Integrating AI capabilities into existing healthcare applications and rapidly developing custom apps for clients, specialising in AI-augmented mobile development.",
+            employmentType: "Contractual",
+            period: "May 2025 - Jan 2026",
+            location: "Mumbai, Maharashtra",
+            summary: "Led development of a comprehensive Practo-like rural healthcare platform focused on democratizing medical access for underserved communities across India.",
             description: [
-              "Integrate generative AI and LLMs into existing mobile applications, modernising apps with cutting-edge AI capabilities",
-              "Act as AI consultant for diverse client domains, embedding intelligent automation and AI features",
-              "Architect apps using CLEAN Architecture and SOLID principles",
-              "Leverage advanced AI tools stack including Dialogflow CX, Lovable, and Emergent for rapid delivery"
+              "Led development of a scalable Practo-like healthcare platform targeting rural and remote regions in India",
+              "Implemented multilingual interfaces and voice-based interactions, training custom voice models for underserved regional dialects",
+              "Leveraged AI-augmented Flutter development with CLEAN Architecture and SOLID principles for long-term scalability",
+              "Integrated medical intelligence using Dialogflow CX, Lovable, and Emergent for efficient code generation and deployment"
             ],
-            skills: ["Dialogflow CX", "Flutter", "AI Integration", "LLM", "OpenAI APIs", "Workflow Automation", "Rapid Mobile App Deployment"]
+            skills: ["Flutter", "Dart", "Dialogflow CX", "LLMs", "Lovable", "Emergent", "CLEAN Architecture", "Voice AI"]
           },
           {
             title: "Python Developer",
-            employmentType: "Freelance",
+            employmentType: "Contractual",
             period: "Jun 2024 - May 2025",
-            location: "Mumbai, Maharashtra, India",
-            summary: "Developed Python-based solutions for healthcare data processing, automation pipelines, and backend integrations.",
+            location: "Pune, Maharashtra",
+            summary: "Developed Android and Excel Add-in applications using generative AI and LLMs; deployed a multilingual AI-powered assistant across healthcare and banking client networks.",
             description: [
-              "Built and maintained Python scripts and pipelines for healthcare data workflows",
-              "Developed automation tools to streamline internal processes and reporting",
-              "Integrated third-party APIs and cloud services (AWS, Azure) into existing systems",
-              "Worked with SQL and MySQL for data management and analysis"
+              "Developed Android and Excel Add-in apps leveraging generative AI and LLMs to automate code generation and accelerate delivery",
+              "Integrated Google Text-to-Speech, Dialogflow CX, and Firebase into production applications",
+              "Led design of a multilingual interface for rural communities, training custom voice models for underserved dialects",
+              "Collaborated with healthcare and banking partners to deploy an AI-powered assistant that streamlined communications and service access",
+              "Built solutions using .NET, HTML/CSS/JavaScript, and Dart/Flutter"
             ],
-            skills: ["Python", "Flask", "SQL", "MySQL", "AWS", "Azure", "APIs", "Data Analysis"]
+            skills: ["Python", "Flutter", "Dart", ".NET", "Dialogflow CX", "Firebase", "Google TTS", "JavaScript", "Generative AI"]
           },
           {
             title: "Python Developer Intern",
             employmentType: "Internship",
             period: "Oct 2023 - Jun 2024",
-            location: "Mumbai, Maharashtra, India",
-            summary: "Interned as a Python developer, contributing to backend development and data analysis tasks within the healthcare technology team.",
+            location: "Mumbai, Maharashtra",
+            summary: "Specialized in generative AI; developed Python scripts to automate XML-based form generation, streamlining company-specific workflows.",
             description: [
-              "Assisted in developing Python scripts for data processing and automation",
-              "Contributed to backend API development using Flask",
-              "Performed data analysis and visualization tasks to support business intelligence",
-              "Gained hands-on experience with cloud platforms and database management"
+              "Developed Python scripts to automate XML-based form generation for internal company workflows",
+              "Applied generative AI techniques to document and data processing pipelines",
+              "Reduced manual processing overhead through targeted workflow automation"
             ],
-            skills: ["Python", "Flask", "Data Analysis", "SQL", "APIs", "Cloud Computing"]
-          }
-        ]
-      },
-      {
-        name: "Numerade",
-        duration: "1 yr 6 mos",
-        location: "Remote",
-        roles: [
-          {
-            title: "Online Tutor",
-            employmentType: "Part-time",
-            period: "Jan 2020 - Jun 2021",
-            location: "Remote",
-            summary: "Provided online tutoring in mathematics, physics, and computer science, creating detailed video explanations for complex STEM problems.",
-            description: [
-              "Created detailed video explanations and step-by-step solutions for complex STEM problems",
-              "Helped students understand fundamental concepts through clear, engaging teaching methods"
-            ],
-            skills: ["Mathematics", "Physics", "Computer Science", "Online Teaching", "Video Creation", "STEM Education"]
+            skills: ["Python", "Generative AI", "XML", "Workflow Automation"]
           }
         ]
       }
@@ -161,18 +142,57 @@ export const portfolioData = {
 
   projects: {
     title: "Projects",
-    projects: [
+    career: [
       {
-        title: "AI-Enhanced Healthcare App",
-        description: "Integrated AI capabilities into existing healthcare application using Dialogflow CX and Flutter, improving patient engagement through intelligent automation.",
-        technologies: ["Flutter", "Dialogflow CX", "OpenAI API", "Healthcare AI"],
+        title: "AI-Powered EdTech Platform",
+        company: "BluOpal Advisors LLP",
+        description: "Interactive learning platform with AI-generated lesson content and real-time visual components. Integrated LLMs to auto-generate study material and built dynamic graphs, diagrams, and charts that update as students progress through topics.",
+        technologies: ["Flutter", "Dart", "LLMs", "Generative AI", "Firebase", "SQL"],
+        status: "In Progress"
+      },
+      {
+        title: "Rural Healthcare Platform",
+        company: "Cetas Healthcare",
+        description: "Practo-like healthcare platform for democratizing medical access across rural India. Features multilingual interfaces, voice-based interactions, and custom dialect voice models to serve underserved communities effectively.",
+        technologies: ["Flutter", "Dart", "Dialogflow CX", "Voice AI", "LLMs", "CLEAN Architecture"],
         status: "Completed"
       },
       {
-        title: "Rapid Prototyping Platform",
-        description: "Developed a rapid prototyping platform using AI tools stack for quick client app development and deployment.",
-        technologies: ["Flutter", "AI Tools", "Rapid Development", "Client Solutions"],
-        status: "In Progress"
+        title: "Multilingual AI Assistant",
+        company: "Cetas Healthcare",
+        description: "Android and Excel Add-in applications using GenAI and LLMs, with a multilingual voice interface featuring custom models for underserved dialects — deployed across healthcare and banking client networks.",
+        technologies: ["Python", "Flutter", "Dart", ".NET", "Dialogflow CX", "Google TTS", "Firebase"],
+        status: "Completed"
+      },
+      {
+        title: "XML Workflow Automation",
+        company: "Cetas Healthcare",
+        description: "Python-based automation system for XML form generation, eliminating manual document processing and streamlining internal company-specific workflows using generative AI.",
+        technologies: ["Python", "Generative AI", "XML", "Workflow Automation"],
+        status: "Completed"
+      }
+    ],
+    personal: [
+      {
+        title: "Cost-Effective Video Upscaling",
+        context: "Final Year Project · SASTRA University · 2024",
+        description: "Hybrid super-resolution pipeline combining interpolation and post-processing to upscale low-resolution footage from low-cost cameras, improving security footage quality without expensive hardware upgrades.",
+        technologies: ["Python", "OpenCV", "Machine Learning", "Super-Resolution", "Computer Vision"],
+        status: "Completed"
+      },
+      {
+        title: "CKD Prediction via ML Feature Selection",
+        context: "University Project · SASTRA University · 2023",
+        description: "Feature selection model for Chronic Kidney Disease prediction that identifies the most contributing diagnostic factors, reducing data volume required for accurate early-stage prediction.",
+        technologies: ["Python", "Machine Learning", "Data Analysis", "Scikit-learn", "SHAP"],
+        status: "Completed"
+      },
+      {
+        title: "IoT Security Alert System",
+        context: "University Project · SASTRA University · 2022",
+        description: "IoT system using MQTT and TCP protocols to detect temperature threshold crossings and trigger real-time SMS alerts for fire and hazard prevention in monitored environments.",
+        technologies: ["Python", "IoT", "MQTT", "TCP", "Arduino", "SMS API"],
+        status: "Completed"
       }
     ]
   },
@@ -182,26 +202,26 @@ export const portfolioData = {
     education: [
       {
         institution: "SASTRA University",
-        degree: "Bachelor of Technology in Computer Science and Engineering",
-        period: "2021 - 2025",
-        grade: "8.5 CGPA",
-        location: "Thanjavur, Tamil Nadu, India",
+        degree: "Bachelor of Technology — Computer Science Engineering",
+        period: "Mar 2020 – Jun 2024",
+        grade: "6.72 CGPA",
+        location: "Thanjavur, Tamil Nadu",
         skills: ["Computer Science", "Software Engineering", "Data Structures", "Algorithms", "Machine Learning"]
       },
       {
         institution: "Orchid School",
-        degree: "12th Standard (Higher Secondary)",
-        period: "2019 - 2021",
-        grade: "",
-        location: "India",
+        degree: "12th Standard — CBSE, English Medium",
+        period: "2018 – 2020",
+        grade: "84%",
+        location: "Pune, Maharashtra",
         skills: ["Mathematics", "Physics", "Chemistry", "Computer Science"]
       },
       {
         institution: "City International School",
-        degree: "10th Standard (Secondary)",
-        period: "2017 - 2019",
-        grade: "",
-        location: "India",
+        degree: "10th Standard — CBSE, English Medium",
+        period: "2016 – 2018",
+        grade: "88%",
+        location: "Pune, Maharashtra",
         skills: ["Mathematics", "Science", "Social Studies"]
       }
     ]
@@ -213,14 +233,48 @@ export const portfolioData = {
       {
         title: "Generative AI Mastermind",
         issuer: "Outskill",
-        date: "2024",
+        date: "Oct 2025",
         description: "Successfully completed the Generative AI Mastermind program by Outskill, gaining hands-on expertise in advanced generative AI technologies including model development, deployment, and practical AI applications."
       },
       {
         title: "Introduction to Prompt Engineering",
         issuer: "Simplilearn",
-        date: "2024",
+        date: "Jan 2025",
         description: "Certified by Simplilearn in Prompt Engineering fundamentals, covering best practices for designing effective prompts for Generative AI applications."
+      }
+    ]
+  },
+
+  awards: {
+    title: "Awards & Volunteering",
+    awards: [
+      {
+        title: "Mecasso Hackathon — 1st Place",
+        organization: "SASTRA University",
+        date: "April 2023",
+        description: "First place awarded for building an innovative assistive technology solution for people with disabilities.",
+        achievement: "Winner"
+      },
+      {
+        title: "TEDx Volunteer",
+        organization: "Orchid School",
+        date: "2019",
+        description: "Volunteered at a TEDx event, supporting event coordination and community engagement initiatives.",
+        achievement: "Volunteer"
+      },
+      {
+        title: "Robin Hood Army — Volunteer Teacher",
+        organization: "Robin Hood Army",
+        date: "2018",
+        description: "Part-time volunteer teacher providing education and support to underserved communities, contributing to reducing educational inequality.",
+        achievement: "Volunteer"
+      },
+      {
+        title: "Manava Gokul Project — Volunteer Teacher",
+        organization: "Manava Gokul Project",
+        date: "2018",
+        description: "Delivered educational programs and mentorship to students in need, contributing to community development through education.",
+        achievement: "Volunteer"
       }
     ]
   },
@@ -229,12 +283,12 @@ export const portfolioData = {
     title: "Contact",
     description: "I'm always interested in new opportunities and collaborations. Let's connect and discuss how we can work together.",
     contactInfo: {
-      email: "satvik.gedam@example.com",
+      email: "satvikricky777@gmail.com",
       linkedin: "https://www.linkedin.com/in/satvik-gedam-2a2866295/",
-      location: "Mumbai, Maharashtra, India"
+      location: "Aundh, Pune, Maharashtra, India"
     },
     ctaButtons: {
-      email: { text: "Send Email", href: "mailto:satvik.gedam@example.com" },
+      email: { text: "Send Email", href: "mailto:satvikricky777@gmail.com" },
       linkedin: { text: "Connect on LinkedIn", href: "https://www.linkedin.com/in/satvik-gedam-2a2866295/", external: true }
     },
     footer: {
@@ -252,6 +306,7 @@ export const portfolioData = {
       { label: "Projects", href: "#projects" },
       { label: "Education", href: "#education" },
       { label: "Certifications", href: "#certifications" },
+      { label: "Awards", href: "#awards" },
       { label: "Contact", href: "#contact" }
     ]
   }
@@ -268,7 +323,8 @@ export const getProjectStatusColor = (status: string) => {
   switch (status.toLowerCase()) {
     case 'completed': return 'bg-green-100 text-green-800';
     case 'in progress': return 'bg-yellow-100 text-yellow-800';
-    case 'award winner': return 'bg-purple-100 text-purple-800';
+    case 'winner': return 'bg-purple-100 text-purple-800';
+    case 'volunteer': return 'bg-blue-100 text-blue-800';
     default: return 'bg-gray-100 text-gray-800';
   }
 };
