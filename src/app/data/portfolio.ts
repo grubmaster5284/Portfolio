@@ -174,6 +174,30 @@ export const portfolioData = {
     ],
     personal: [
       {
+        title: "AIO Calculator",
+        context: "Personal Project · Flutter",
+        description: "All-in-one Flutter calculator app covering multiple calculation modes. Built as deliberate practice for AI-assisted rapid development workflows — shipped in 7–10 days.",
+        technologies: ["Flutter", "Dart"],
+        status: "Completed",
+        link: "https://github.com/grubmaster5284/aio_calculator"
+      },
+      {
+        title: "Voice-to-Text App",
+        context: "Personal Project · Flutter",
+        description: "Flutter mobile app for real-time speech-to-text transcription. Built as deliberate practice for AI-assisted rapid development — shipped in 7–10 days.",
+        technologies: ["Flutter", "Dart", "Speech Recognition"],
+        status: "Completed",
+        link: "https://github.com/grubmaster5284/voice-to-text"
+      },
+      {
+        title: "Nova Android Assistant",
+        context: "Personal Project · Kotlin · Android",
+        description: "Offline-first Android voice assistant with \"Hey Nova\" wake word detection via Porcupine. Features a background foreground service for continuous listening, automatic Bluetooth/headphone audio routing, and a Material Design 3 UI with animated orb visualizations. Built on feature-based Clean Architecture with MVVM.",
+        technologies: ["Kotlin", "Jetpack Compose", "Porcupine", "Hilt", "DataStore", "Clean Architecture"],
+        status: "Suspended",
+        link: "https://github.com/grubmaster5284/nova-android-assistant"
+      },
+      {
         title: "Cost-Effective Video Upscaling",
         context: "Final Year Project · SASTRA University · 2024",
         description: "Hybrid super-resolution pipeline combining interpolation and post-processing to upscale low-resolution footage from low-cost cameras, improving security footage quality without expensive hardware upgrades.",
@@ -323,6 +347,7 @@ export const getProjectStatusColor = (status: string) => {
   switch (status.toLowerCase()) {
     case 'completed': return 'bg-green-100 text-green-800';
     case 'in progress': return 'bg-yellow-100 text-yellow-800';
+    case 'suspended': return 'bg-orange-100 text-orange-700';
     case 'winner': return 'bg-purple-100 text-purple-800';
     case 'volunteer': return 'bg-blue-100 text-blue-800';
     default: return 'bg-gray-100 text-gray-800';
