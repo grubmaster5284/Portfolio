@@ -37,28 +37,28 @@ export const portfolioData = {
     title: "Skills",
     categories: [
       {
-        title: "AI & Generative AI",
-        skills: ["Generative AI", "Agentic AI", "LLM Integration", "OpenAI API", "Claude AI", "Google Gemini", "Dialogflow CX", "Llama", "Natural Language Processing", "Prompt Engineering"]
+        title: "AI & GenAI",
+        skills: ["Generative AI", "Agentic AI", "LLM Integration", "OpenAI API", "Dialogflow CX", "Google Gemini", "Prompt Engineering"]
       },
       {
-        title: "Mobile & App Development",
-        skills: ["Flutter", "Dart", "AI-Augmented Flutter Development", "Rapid Mobile App Deployment", "Android Studio", "Kotlin", "Firebase"]
+        title: "Mobile & App Dev",
+        skills: ["Flutter", "Dart", "Kotlin", "Firebase", "Android Studio"]
       },
       {
         title: "ML & Data Science",
-        skills: ["Machine Learning", "TensorFlow", "PyTorch", "Computer Vision", "OpenCV", "Image Processing", "Data Analysis"]
+        skills: ["Machine Learning", "TensorFlow", "PyTorch", "Computer Vision", "Data Analysis"]
       },
       {
         title: "Web & Backend",
-        skills: ["Python", "Flask", "JavaScript", "TypeScript", "HTML5", "CSS", ".NET", "SQL", "MySQL", "APIs"]
+        skills: ["Python", "Flask", "JavaScript", "TypeScript", "HTML5", "SQL"]
       },
       {
         title: "Cloud & DevOps",
-        skills: ["AWS", "Azure", "Google Cloud Platform", "Docker", "Git", "GitHub"]
+        skills: ["AWS", "Azure", "Google Cloud Platform", "Docker", "Git"]
       },
       {
-        title: "Dev Tools & Automation",
-        skills: ["Cursor", "Lovable", "Emergent", "Replit", "Jira", "Jupyter", "Workflow Automation"]
+        title: "Dev Tools",
+        skills: ["Cursor", "Lovable", "Emergent", "Jira", "Workflow Automation"]
       }
     ]
   },

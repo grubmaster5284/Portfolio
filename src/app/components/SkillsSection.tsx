@@ -8,18 +8,18 @@ export default function SkillsSection() {
           <h2 className="text-4xl font-bold text-gray-900 mb-4">{portfolioData.skills.title}</h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="flex gap-5 overflow-x-auto pb-4 -mx-4 px-4">
           {portfolioData.skills.categories.map((category, index) => (
-            <div 
+            <div
               key={index}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+              className="bg-white p-5 rounded-lg shadow-md flex-shrink-0 w-52"
             >
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">{category.title}</h3>
-              <div className="space-y-3">
+              <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-4">{category.title}</h3>
+              <div className="flex flex-col gap-2">
                 {category.skills.map((skill, skillIndex) => (
-                  <div 
+                  <div
                     key={skillIndex}
-                    className="bg-blue-50 text-blue-800 px-3 py-2 rounded-full text-sm font-medium hover:bg-blue-100 transition-colors cursor-pointer"
+                    className="bg-blue-50 text-blue-800 px-3 py-2 rounded-full text-sm font-medium hover:bg-blue-100 transition-colors text-center"
                   >
                     {skill}
                   </div>
