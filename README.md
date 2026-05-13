@@ -68,12 +68,11 @@ src/app/
 │   ├── ProjectsSection.tsx
 │   ├── EducationSection.tsx
 │   ├── CertificationsSection.tsx
-│   ├── AwardsSection.tsx
 │   ├── ContactSection.tsx
 │   └── Footer.tsx
 ├── data/
 │   └── portfolio.ts     # Consolidated data file
-├── page.tsx             # Main page (29 lines)
+├── page.tsx             # Main page
 └── layout.tsx           # App layout with metadata
 ```
 
@@ -137,24 +136,24 @@ projects: {
 #### **Experience Section** (in `portfolio.ts`)
 ```typescript
 experience: {
-  title: "Professional Experience",
+  title: "Experience",
   companies: [
     {
-      name: "Cetas Healthcare",
-      duration: "2 yrs 1 mo",
+      name: "BluOpal Advisors LLP",
+      duration: "5 mos",
       location: "Remote",
       roles: [
         {
-          title: "AI Software Developer",
-          employmentType: "Freelance",
-          period: "May 2024 - Present",
-          location: "Mumbai, Maharashtra, India",
-          summary: "Integrating AI capabilities into existing applications and rapidly developing custom apps for clients, specializing in AI-augmented mobile development with advanced AI tools stack.",
+          title: "Flutter Developer & AI Integration Specialist",
+          employmentType: "Full-time",
+          period: "Jan 2025 - Present",
+          location: "Remote",
+          summary: "Leading Flutter development and AI integration for client projects.",
           description: [
-            "Specialize in rapid development and deployment using advanced AI tools stack including Cursor, Replit, Dialogflow CX, Lovable, and Emergent",
-            "Integrate generative AI and LLMs directly into existing mobile applications, modernizing apps with cutting-edge AI capabilities"
+            "Develop and deliver AI-integrated Flutter applications for diverse client requirements",
+            "Integrate generative AI capabilities including LLMs, OpenAI APIs, and Claude into mobile apps"
           ],
-          skills: ["Dialogflow CX", "Rapid Mobile App Deployment", "Flutter", "AI Integration", "Client Consulting", "LLM", "OpenAI APIs"]
+          skills: ["Flutter", "Dart", "AI Integration", "LLM", "OpenAI APIs"]
         }
       ]
     }
@@ -276,14 +275,14 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Built with ❤️ using Next.js, TypeScript, and Tailwind CSS**
 
-*Last updated: October 2024*
+*Last updated: May 2026*
 
 ---
 
 **Portfolio Features:**
-- ✅ Real project data from your GitHub profile
+- ✅ Real project data from your LinkedIn profile
 - ✅ Actual contact information and links
-- ✅ Current role at Cetas Healthcare
+- ✅ Current roles at BluOpal Advisors LLP & Cetas Healthcare
 - ✅ Live website deployment
 - ✅ Optimized component-based architecture
 - ✅ Consolidated data management system
